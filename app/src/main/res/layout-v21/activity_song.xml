@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/song_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".song_activity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="200dp"
+        app:cardCornerRadius="180dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="275dp"
+            android:layout_height="275dp"
+            android:layout_gravity="center"
+            app:cs_circle_stroke_width="5dp"
+            app:cs_circle_style="round"
+            app:cs_disable_progress_glow="false"
+            app:cs_end_angle="410"
+            app:cs_negative_enabled="true"
+            app:cs_pointer_stroke_width="18dp"
+            app:cs_progress="0"
+            app:cs_start_angle="130" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/play_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="70dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <ImageView
+            android:id="@+id/play_n_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pause" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/song_name_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/amaranth"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/play_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="louisFanci (despacito) sean Paul No lie" />
+
+    <ImageView
+        android:id="@+id/previous"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/next_pre"
+        android:elevation="10dp"
+        android:padding="7dp"
+        android:src="@drawable/previous"
+        android:translationZ="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/play_button"
+        app:layout_constraintEnd_toStartOf="@+id/play_button"
+        app:layout_constraintTop_toTopOf="@+id/play_button" />
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginLeft="-10dp"
+        android:background="@drawable/pre_next"
+        android:elevation="10dp"
+        android:padding="7dp"
+        android:translationZ="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/play_button"
+        app:layout_constraintStart_toEndOf="@+id/play_button"
+        app:layout_constraintTop_toTopOf="@+id/play_button"
+        app:srcCompat="@drawable/next" />
+</androidx.constraintlayout.widget.ConstraintLayout>
